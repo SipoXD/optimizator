@@ -13,8 +13,8 @@ if isAdmin() == False:
     exit()
 
 try:
-    os.system("sc stop sysmain")
-    os.system("sc stop diagtrack")  
+    os.system("sc stop sysmain & sc config sysmain start=disabled")
+    os.system("sc stop diagtrack & sc config diagtrack start=disabled")  
     shutil.rmtree(r"C:\\Users\\" + windows_user + r"\\AppData\\Local\\Temp", ignore_errors=True)
     shutil.rmtree(r"C:\Windows\\Prefetch", ignore_errors=True)
     os.system("cls")
